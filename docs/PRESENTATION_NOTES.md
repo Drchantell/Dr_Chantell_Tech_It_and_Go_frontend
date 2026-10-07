@@ -1,64 +1,60 @@
-# Tech It & Go! — Presentation Notes
+# Tech It & Go! — Simple Presentation Notes
+
+**Author:** Dr. Chantell McDowell  
+**Per Scholas Software Engineering Capstone**
+
+These notes match the beginner-friendly presentation. They are written so I can read them almost word for word if I need to.
 
 ## Slide 1 — Tech It & Go!
-“Hi everyone, I’m Dr. Chantell McDowell. My capstone is Tech It & Go!, a full-stack technology lending library. I built it to connect my background in libraries and makerspaces with what we learned in this course.”
+“My name is Dr. Chantell McDowell. My capstone is Tech It & Go!, a technology lending library. I built it to connect my experience in libraries and makerspaces with the full-stack skills I learned at Per Scholas.”
 
-## Slide 2 — Why I Built It
-Explain your background in libraries, makerspaces, STEM programs, and community partnerships. Ask the class: **What technology would you borrow first?**
+## Slide 2 — What is Tech It & Go?
+“Tech It & Go! is a full-stack technology lending library. Users can browse equipment, learn about it, and submit a request to borrow it. Staff can manage the equipment catalog.”
 
-## Slide 3 — The Problem
-Technology can be expensive, difficult to share, and hard to track. A program also needs training or lesson ideas, not just the equipment.
+## Slide 3 — Why I Built It
+“I built this because technology access is often limited by cost. A program may need a robotics kit, laptop, or 3D-printing tool for one project, but not be able to purchase everything. I also wanted lesson plans connected to the equipment.”
 
-## Slide 4 — My Solution
-Walk through the user journey: browse → learn → request → manage → staff maintenance. Emphasize that a request begins as **pending**, not an automatic reservation.
+## Slide 4 — Who Uses the App?
+“There are two main roles. Borrowers use the catalog and manage their own pending requests. Staff users have additional permission to manage equipment.”
 
-## Slide 5 — Who Can Use It?
-Educators, makerspaces, nonprofits, learners, and staff. Explain the borrower and staff roles.
+## Slide 5 — The User Flow
+“The main flow is browse, learn, request, and manage. I kept requests pending because borrowing equipment should still be reviewed by staff.”
 
-## Slide 6 — Technology Stack
-Keep it simple: React is what users see. Express is the API. MongoDB saves the data. JWT and bcrypt handle login/security. GitHub Actions checks the project.
+## Slide 6 — Frontend Tools
+“On the frontend I used HTML and CSS concepts through React, JavaScript for the logic, React for components, Vite for the project build, React Router for navigation, and Fetch to communicate with the API.”
 
-## Slide 7 — How the App Works
-Use one example: submitting a lending request. React sends the form to Express. Express validates it and uses Mongoose to save it. MongoDB returns the record. React displays the saved request.
+## Slide 7 — Backend Tools
+“Node.js lets me run JavaScript on the backend. Express gives me the server and routes. I use REST routes for CRUD. Middleware handles things such as authentication, JSON, CORS, and errors. dotenv keeps private values out of GitHub.”
 
-## Slide 8 — Database Models
-Explain the four models and references between them. A request connects a user and a piece of equipment. A lesson connects to equipment.
+## Slide 8 — Database Tools
+“MongoDB Atlas stores the data. Mongoose helps me define the shape of that data and communicate with MongoDB from Node and Express.”
 
-## Slide 9 — Frontend Features
-Highlight search/filter, details, lessons, registration/login, dashboard, lending form, and staff equipment management.
+## Slide 9 — Authentication + Security
+“I used bcrypt so plain passwords are not saved in the database. JWT is used after login. I also check roles and request ownership so users cannot access data that belongs to someone else.”
 
-## Slide 10 — Backend + API
-Explain that CRUD is protected by business rules. Borrowers cannot change staff equipment. Borrowers can manage only their own pending requests.
+## Slide 10 — Full CRUD
+“CRUD means Create, Read, Update, and Delete. I implemented full CRUD for equipment and lending requests. The frontend buttons connect to backend routes, and the backend saves the changes in MongoDB.”
 
-## Slide 11 — Authentication + Security
-Use this easy explanation:
-- Hashing protects saved passwords.
-- Authentication answers: **Who are you?**
-- Authorization answers: **What are you allowed to do?**
+## Slide 11 — Development + Testing Tools
+“I worked in VS Code, tracked changes with Git and GitHub, used Postman while testing API routes, and added Supertest integration tests. GitHub Actions runs checks automatically when I push changes.”
 
-## Slide 12 — Full CRUD
-This directly addresses the capstone rubric. Say: **I implemented full CRUD twice—equipment and lending requests.**
+## Slide 12 — Deployment Tools
+“For deployment, MongoDB Atlas stores the database, Render hosts the backend API, and Vercel hosts the React frontend. Environment variables connect them without putting secrets in GitHub.”
 
-## Slide 13 — Challenges
-Talk naturally about MongoDB credentials, frontend/backend communication, JWT authentication, CRUD rules, CORS/deployment, and testing.
+## Slide 13 — Other Course Skills I Learned
+“I also learned TypeScript, the DOM, GraphQL, OAuth, Java and Spring concepts, SQL and NoSQL concepts, Agile workflow, and AI for software engineering. I can explain those concepts, but I did not add unnecessary runtime dependencies just to make the list longer.”
 
-## Slide 14 — How I Worked Through Challenges
-Explain the process: read the error → isolate one layer → run a small check → reconnect the full flow → document the solution.
+## Slide 14 — Challenges I Faced
+“My biggest challenges were MongoDB setup, connecting the frontend and backend, authentication, permissions, and deployment settings. Those challenges helped me understand how the complete stack works together.”
 
-## Slide 15 — Testing
-Explain that the backend integration test covers registration, login, permissions, ownership, MongoDB, equipment CRUD, and lending-request CRUD. The frontend also has a production build check.
+## Slide 15 — How I Worked Through Problems
+“Instead of trying to fix the whole application at once, I learned to isolate the layer causing the problem. I test the database, API, and frontend separately, then reconnect the full workflow.”
 
-## Slide 16 — Deployment
-Explain the intended chain: MongoDB Atlas → Render API → Vercel frontend. Do not show real passwords or secrets.
+## Slide 16 — Live Demo
+“For my demo I will focus on the working user story instead of clicking every page. I will browse, log in, create a request, show the dashboard, and then show staff equipment management.”
 
-## Slide 17 — Live Demo
-Use the demo checklist in `DEMO_SCRIPT.md`.
+## Slide 17 — What I Learned
+“The biggest lesson for me is that full-stack development is about connecting layers. A button in React can eventually create a MongoDB document, but every layer in between has a job.”
 
-## Slide 18 — Icebox
-Show that you intentionally kept larger features out of the MVP so the core project could be completed correctly.
-
-## Slide 19 — What This Shows About Me
-Connect your professional background to your software engineering skills. This is a portfolio project, not only a class assignment.
-
-## Slide 20 — Thank You
-Close with: “This project helped me understand how all the pieces of a full-stack application work together. Thank you, and I’d love your questions or feedback.”
+## Slide 18 — Thank You
+“Thank you. Tech It & Go! gave me a way to combine my professional background with the software engineering skills I learned in this course. I am happy to answer questions.”
