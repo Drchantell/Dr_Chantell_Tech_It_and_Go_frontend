@@ -73,6 +73,85 @@ function Home() {
         </div>
       </section>
 
+      <section className="section course-tools">
+        <div className="section-heading">
+          <p className="eyebrow">My Per Scholas Toolkit</p>
+          <h2>Tools and concepts I can explain from this course</h2>
+          <p>
+            I used the first group directly in Tech It & Go!. The second group
+            shows additional course concepts I learned and can explain, even
+            when I chose a different tool for this MVP.
+          </p>
+        </div>
+
+        <div className="tool-groups">
+          <article className="tool-group">
+            <h3>Used directly in this project</h3>
+            <p className="tool-note">
+              These tools are part of the working app or my development workflow.
+            </p>
+            <div className="tool-list">
+              {[
+                "HTML5",
+                "CSS3",
+                "JavaScript ES6+",
+                "React",
+                "Vite",
+                "React Router",
+                "Fetch API",
+                "Node.js",
+                "Express.js",
+                "REST APIs",
+                "Middleware",
+                "MongoDB Atlas",
+                "Mongoose",
+                "CRUD",
+                "bcrypt",
+                "JWT",
+                "dotenv",
+                "CORS",
+                "Git",
+                "GitHub",
+                "Postman",
+                "Supertest",
+                "GitHub Actions",
+                "Render",
+                "Vercel"
+              ].map((tool) => (
+                <span className="tool-chip" key={tool}>
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </article>
+
+          <article className="tool-group">
+            <h3>Additional course concepts I learned</h3>
+            <p className="tool-note">
+              I did not force these into the MVP when another approach fit the project better.
+            </p>
+            <div className="tool-list">
+              {[
+                "TypeScript",
+                "DOM",
+                "GraphQL",
+                "OAuth 2.0",
+                "Java / Spring Boot concepts",
+                "SQL concepts",
+                "NoSQL concepts",
+                "Agile workflow",
+                "Authentication & Authorization",
+                "AI for Software Engineering"
+              ].map((tool) => (
+                <span className="tool-chip" key={tool}>
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section className="feature-strip">
         <div>
           <strong>Browse</strong>
