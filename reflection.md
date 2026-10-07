@@ -1,13 +1,18 @@
-Tech It and Go Frontend Reflection
+# Tech It & Go! Frontend Reflection
 
-I chose this idea because it connects my interest in libraries, makerspaces, and technology education with what I am learning in class.
+I chose Tech It & Go! because it connects my background in libraries and makerspaces with what I am learning in software engineering.
 
-At this stage, I have a planning board rather than a completed React application. The board helps me see the work that is still ahead of me. I am learning to separate the pages people will use from the server that will handle their information.
+The frontend is now built with React and Vite. I created a home page, equipment catalog, equipment details, lesson plans, registration, login, a personal dashboard, a borrowing request form, and a staff equipment management page. I also added my Tech It & Go! logo and used the same Arial font and color palette throughout the app.
 
-The sharing process was a challenge. My local HTML file opened on my computer, but the file address could not be used by Paul and Bryan. I also had to separate a GitHub code link from a live app link. Publishing the source is one step, and deploying a working app is another.
+One challenge was understanding how the frontend and backend work together. The React pages are what the user sees, but the information needs to come from the Express API and MongoDB. I learned how to use fetch requests, protected routes, localStorage for the login token, and React state to update the screen.
 
-Another part of planning was keeping the project manageable. I have several ideas, but I need to finish the catalog, login, and borrowing request flow before adding more features. The Icebox list gives me a place to keep those ideas.
+Another challenge was keeping the project beginner-friendly while still meeting the full-stack requirements. I kept the pages simple and separated the work into smaller components and routes. The catalog also has sample data so I can still preview the design before the backend is connected locally.
 
-After I graduate, I want to add equipment favorites, a reservation calendar, and downloadable lessons. I would like to get feedback from educators and borrowers so I can make the pages easier to use.
+The frontend now supports the full borrowing flow. A user can register, log in, browse equipment, open a lesson, submit a request, and manage pending requests from the dashboard. Staff users also have a separate equipment management screen.
 
-Author Dr. Chantell McDowell PerScholas Student
+The production React build check passes in GitHub Actions. My remaining external setup is to connect the frontend to the live backend URL when I deploy the application.
+
+After graduation, I would like to add favorites, a reservation calendar, more lesson plans, image uploads, and additional accessibility improvements.
+
+Author: Dr. Chantell McDowell  
+Per Scholas Student
