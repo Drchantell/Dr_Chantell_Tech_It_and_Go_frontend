@@ -26,6 +26,7 @@ export async function apiRequest(path, options = {}) {
   if (!response.ok) {
     if (response.status === 401) {
       localStorage.removeItem("techItGoToken");
+      window.dispatchEvent(new Event("techItGoSessionExpired"));
     }
 
     throw new Error(data?.message || "Something went wrong. Please try again.");
