@@ -1,12 +1,38 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 function Register() {
-  const [message, setMessage] = useState("");
+  const { register, isLoggedIn } = useAuth();
+  const navigate = useNavigate();
+  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
-  function handleSubmit(event) {
+  if (isLoggedIn) {
+    return <Navigate to="/dashboard" replace />;
+  }
+
+  function updateForm(event) {
+    setForm((current) => ({
+      ...current,
+      [event.target.name]: event.target.value,
+    }));
+  }
+
+  async function handleSubmit(event) {
     event.preventDefault();
-    setMessage("Registration form is ready. Backend account creation will be connected next.");
+    setError("");
+    setSubmitting(true);
+
+    try {
+      await register(form);
+      navigate("/dashboard", { replace: true });
+    } catch (requestError) {
+      setError(requestError.message);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -24,23 +50,47 @@ function Register() {
         <form onSubmit={handleSubmit}>
           <label>
             Name
-            <input type="text" name="name" autoComplete="name" required />
+            <input
+              type="text"
+              name="name"
+              autoComplete="name"
+              value={form.name}
+              onChange={updateForm}
+              required
+            />
           </label>
 
           <label>
             Email
-            <input type="email" name="email" autoComplete="email" required />
+            <input
+              type="email"
+              name="email"
+              autoComplete="email"
+              value={form.email}
+              onChange={updateForm}
+              required
+            />
           </label>
 
           <label>
             Password
-            <input type="password" name="password" autoComplete="new-password" minLength="8" required />
+            <input
+              type="password"
+              name="password"
+              autoComplete="new-password"
+              minLength="8"
+              value={form.password}
+              onChange={updateForm}
+              required
+            />
           </label>
 
-          <button className="button primary" type="submit">Create Account</button>
+          <button className="button primary" type="submit" disabled={submitting}>
+            {submitting ? "Creating Account..." : "Create Account"}
+          </button>
         </form>
 
-        {message && <p className="form-message">{message}</p>}
+        {error && <p className="error-message">{error}</p>}
 
         <p className="form-switch">
           Already have an account? <Link to="/login">Log in here.</Link>
