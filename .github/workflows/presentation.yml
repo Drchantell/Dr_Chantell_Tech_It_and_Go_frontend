@@ -26,7 +26,9 @@ jobs:
         run: npm install --no-save pptxgenjs
 
       - name: Build PowerPoint
-        run: node presentation/generate-presentation.js
+        run: |
+          cp presentation/generate-presentation.js presentation/generate-presentation.cjs
+          node presentation/generate-presentation.cjs
 
       - name: Upload PowerPoint
         uses: actions/upload-artifact@v4
