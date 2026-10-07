@@ -1,19 +1,41 @@
-Tech It and Go Frontend
+# Tech It & Go! Frontend
 
-I am creating Tech It and Go as my Per Scholas capstone project. My idea is a technology lending library where educators, makerspaces, and nonprofit programs can find equipment and learning resources.
+Tech It & Go! is my Per Scholas capstone project. It is a technology lending library for educators, makerspaces, nonprofits, and learners.
 
-This repository currently contains my planning board. It is a small HTML page that helps me organize my work into To Do, Done, and Icebox. Icebox means ideas that I want to work on later. I can change a task's status and export the board as a JSON file or an HTML copy with my current task statuses.
+The frontend is built with React and Vite. Users can browse equipment, search and filter the catalog, view equipment details and lesson plans, create an account, log in, submit lending requests, and manage their own pending requests. Staff users also have an equipment management page.
 
-To use the board, download planning-board.html and open it in a browser. Changes are saved in that browser on that device. The HTML page includes a link to my shared Trello board. Local task changes do not automatically sync with Trello. The GitHub link shares the source file. It is not a deployed application link.
+## Main Pages
 
-Shared planning board: [Tech It & Go Capstone Board](https://trello.com/b/kTUE5MaX/🚀tech-it-go-capstone-board)
+- Home
+- Equipment Catalog
+- Equipment Details
+- Lesson Plan
+- Register
+- Login
+- User Dashboard
+- Lending Request Form
+- Staff Equipment Management
 
-My project logo is saved in public/Tech&Gologo.svg and appears at the top of the planning board. The SVG file holds my original transparent PNG image. The board also includes the logo inside the HTML file, so it stays visible when I download or export a copy. I can reuse the logo when I build my React pages.
+## Design
 
-My next step is to build the React application. I plan to include a catalog, equipment details, lessons, registration, login, and a personal dashboard for borrowing requests. I also plan to connect the pages to my Express backend.
+I used my Tech It & Go! logo throughout the app where branding is helpful. The color palette includes hot pink, teal, purple, mint, black, and white. Arial is used consistently throughout the application.
 
-One challenge with this stage was sharing my work. A file address from my Downloads folder only works on my own computer. I needed a shared location for the files and separate repositories for the frontend and backend. Breaking the project into smaller tasks also helped me decide what to finish first.
+## Run the Frontend
 
-After I graduate, I would like to add a reservation calendar, saved equipment, and more lesson plans. I would also like to try the app with a small makerspace program and improve it based on feedback.
+1. Open this folder in VS Code.
+2. Run `npm install`.
+3. Copy `.env.example` to a new file named `.env`.
+4. Keep `VITE_API_URL=http://localhost:5000/api` when running the backend locally.
+5. Run `npm run dev`.
+6. Open the local Vite address shown in the terminal.
 
-Author Dr. Chantell McDowell PerScholas Student
+The frontend includes sample catalog data as a browsing fallback when the API is offline. Login, saved requests, and staff tools require the Express backend and MongoDB.
+
+## Technology
+
+React, Vite, React Router, JavaScript, HTML, CSS, Fetch API, Git, and GitHub.
+
+## Author
+
+Dr. Chantell McDowell  
+Per Scholas Student
