@@ -661,3 +661,27 @@ textarea:focus {
     padding-bottom: 54px;
   }
 }
+
+
+.branding-logo {
+  display: block;
+  width: min(220px, 70%);
+  max-height: 110px;
+  object-fit: contain;
+}
+
+.auth-logo {
+  margin: 0 auto 22px;
+}
+
+.dashboard-brand {
+  width: 150px;
+  margin-bottom: 18px;
+}
+
+.footer-logo {
+  width: 130px;
+  max-height: 70px;
+  object-fit: contain;
+  margin: 0 auto 14px;
+}
