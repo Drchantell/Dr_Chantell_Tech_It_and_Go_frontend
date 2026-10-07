@@ -8,6 +8,12 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(Boolean(localStorage.getItem("techItGoToken")));
 
   useEffect(() => {
+    function handleSessionExpired() {
+      setUser(null);
+    }
+
+    window.addEventListener("techItGoSessionExpired", handleSessionExpired);
+
     async function loadUser() {
       const token = localStorage.getItem("techItGoToken");
 
@@ -28,6 +34,10 @@ export function AuthProvider({ children }) {
     }
 
     loadUser();
+
+    return () => {
+      window.removeEventListener("techItGoSessionExpired", handleSessionExpired);
+    };
   }, []);
 
   async function register(formData) {
