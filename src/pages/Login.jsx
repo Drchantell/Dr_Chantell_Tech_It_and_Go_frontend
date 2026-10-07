@@ -12,6 +12,11 @@ function Login() {
   return (
     <section className="section page-section narrow-section">
       <div className="form-card">
+        <img
+          className="branding-logo auth-logo"
+          src="/Tech%26Gologo.svg"
+          alt="Tech It & Go!"
+        />
         <p className="eyebrow">Welcome Back</p>
         <h1>Log In</h1>
         <p>Use your Tech It & Go! account to manage your borrowing requests.</p>
