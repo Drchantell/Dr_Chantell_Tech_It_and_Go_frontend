@@ -5,6 +5,11 @@ function Dashboard() {
     <section className="section page-section">
       <div className="dashboard-header">
         <div>
+          <img
+            className="branding-logo dashboard-brand"
+            src="/Tech%26Gologo.svg"
+            alt="Tech It & Go!"
+          />
           <p className="eyebrow">My Dashboard</p>
           <h1>My Borrowing Requests</h1>
           <p>
