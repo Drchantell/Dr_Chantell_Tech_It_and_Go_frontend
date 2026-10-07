@@ -158,6 +158,20 @@ Deployment instructions are in:
 
 `DEPLOYMENT.md`
 
+## Challenges I Faced
+
+One of my biggest challenges was connecting the frontend to the backend and understanding how the data moves through the full application. At first, it was easier for me to think about the React pages by themselves, but this project helped me understand that the frontend has to send requests to the API and wait for the backend and MongoDB to respond.
+
+Another challenge was authentication. I had to understand how the JWT token is created after login, stored in localStorage, and sent with protected API requests. I also had to make sure protected pages reacted correctly if the login expired.
+
+Full CRUD was another important challenge. I wanted users to be able to create, read, update, and delete lending requests, while staff users could manage equipment. I had to make sure the forms, dashboard, and API calls stayed in sync after information was added, edited, or deleted.
+
+I also spent time keeping the design consistent across the application. I wanted the project to look like one complete product, so I worked with the same Tech It & Go! logo, colors, font, buttons, cards, and page layouts throughout the site.
+
+Responsive design was also something I had to think about. I needed the layout to work on different screen sizes without losing the bold makerspace style I wanted.
+
+Preparing the frontend for deployment gave me another new challenge. I had to learn how environment variables work, how the live frontend knows the backend API address, and why React Router needs special configuration when the application is deployed.
+
 ## What I Learned
 
 This project helped me practice how the frontend and backend work together.
