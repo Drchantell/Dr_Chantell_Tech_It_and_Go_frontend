@@ -12,6 +12,11 @@ function Register() {
   return (
     <section className="section page-section narrow-section">
       <div className="form-card">
+        <img
+          className="branding-logo auth-logo"
+          src="/Tech%26Gologo.svg"
+          alt="Tech It & Go!"
+        />
         <p className="eyebrow">Join Tech It & Go!</p>
         <h1>Create an Account</h1>
         <p>Create an account so you can submit and manage technology requests.</p>
