@@ -1,0 +1,107 @@
+/*
+  Tech It & Go!
+  Author: Dr. Chantell McDowell
+  Per Scholas Software Engineering Capstone
+  Brand palette inspired by my MakeHERspace colors.
+*/
+
+:root {
+  --tech-it-go-logo: url('/Tech%26Gologo.svg');
+}
+
+.course-tools {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)),
+    var(--tech-it-go-logo) right 32px top 32px / 260px auto no-repeat;
+}
+
+.course-tools::after {
+  content: 'Dr. Chantell McDowell • Per Scholas Capstone';
+  position: absolute;
+  right: 28px;
+  bottom: 18px;
+  color: rgba(17, 16, 21, 0.5);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.tool-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.tool-group {
+  position: relative;
+  z-index: 1;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid var(--black);
+  border-radius: 22px;
+  box-shadow: 7px 7px 0 var(--soft-purple);
+}
+
+.tool-group:nth-child(2) {
+  box-shadow: 7px 7px 0 var(--mint);
+}
+
+.tool-group h3 {
+  margin-bottom: 10px;
+}
+
+.tool-note {
+  color: #5a5566;
+  margin-bottom: 18px;
+}
+
+.tool-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tool-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 2px solid var(--black);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--black);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.tool-group:first-child .tool-chip:nth-child(3n + 1) {
+  background: #ffe1f2;
+}
+
+.tool-group:first-child .tool-chip:nth-child(3n + 2) {
+  background: #dafaf7;
+}
+
+.tool-group:first-child .tool-chip:nth-child(3n + 3) {
+  background: var(--soft-purple);
+}
+
+@media (max-width: 800px) {
+  .tool-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .course-tools {
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
+      var(--tech-it-go-logo) center top 24px / 180px auto no-repeat;
+  }
+
+  .course-tools::after {
+    position: static;
+    display: block;
+    margin-top: 26px;
+    text-align: center;
+  }
+}
