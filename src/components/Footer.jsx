@@ -1,6 +1,11 @@
 function Footer() {
   return (
     <footer className="site-footer">
+      <img
+        className="footer-logo"
+        src="/Tech%26Gologo.svg"
+        alt="Tech It & Go!"
+      />
       <p>
         <strong>Tech It & Go!</strong> — Borrow the tech. Build your next big idea.
       </p>
