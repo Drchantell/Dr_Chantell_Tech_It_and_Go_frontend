@@ -12,11 +12,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
+
       - name: Install dependencies
         run: npm install
+
       - name: Build React app
         run: npm run build
+
+      - name: Package frontend source
+        run: zip -r tech-it-go-frontend-source.zip . -x "node_modules/*" "dist/*" ".git/*"
+
+      - name: Upload frontend source
+        uses: actions/upload-artifact@v4
+        with:
+          name: tech-it-go-frontend-source
+          path: tech-it-go-frontend-source.zip
+          retention-days: 7
