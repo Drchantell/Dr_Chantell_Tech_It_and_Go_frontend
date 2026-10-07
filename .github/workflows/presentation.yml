@@ -1,0 +1,36 @@
+name: Capstone Presentation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "presentation/**"
+      - "docs/**"
+      - "public/Tech&Gologo.svg"
+      - ".github/workflows/presentation.yml"
+
+jobs:
+  build-presentation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install presentation dependency
+        run: npm install --no-save pptxgenjs
+
+      - name: Build PowerPoint
+        run: node presentation/generate-presentation.js
+
+      - name: Upload PowerPoint
+        uses: actions/upload-artifact@v4
+        with:
+          name: Tech-It-and-Go-Capstone-Presentation
+          path: presentation/Tech_It_and_Go_Capstone_Presentation.pptx
+          retention-days: 30
