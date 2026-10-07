@@ -8,7 +8,7 @@ To use the board, download planning-board.html and open it in a browser. Changes
 
 Shared planning board: [Tech It & Go Capstone Board](https://trello.com/b/kTUE5MaX/🚀tech-it-go-capstone-board)
 
-My project logo is saved in public/Tech&Gologo.svg and appears at the top of the planning board. The SVG file holds my original transparent PNG image. To view the board with the logo, download the whole repository so the public folder stays with the HTML file. I can reuse this logo when I build my React pages.
+My project logo is saved in public/Tech&Gologo.svg and appears at the top of the planning board. The SVG file holds my original transparent PNG image. The board also includes the logo inside the HTML file, so it stays visible when I download or export a copy. I can reuse the logo when I build my React pages.
 
 My next step is to build the React application. I plan to include a catalog, equipment details, lessons, registration, login, and a personal dashboard for borrowing requests. I also plan to connect the pages to my Express backend.
 
