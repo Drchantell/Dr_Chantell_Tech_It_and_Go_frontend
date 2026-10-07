@@ -101,15 +101,38 @@ I also use the Tech It & Go! logo throughout the app and Arial as the main font 
 
 ## Technologies I Used
 
+This capstone connects the main tools I used across the course:
+
+- HTML5
+- CSS3
+- JavaScript (ES6+)
 - React
 - Vite
 - React Router
-- JavaScript
-- HTML
-- CSS
 - Fetch API
+- Node.js
+- Express.js
+- REST APIs
+- Express middleware
+- MongoDB Atlas
+- Mongoose
+- CRUD
+- bcrypt
+- JSON Web Tokens (JWT)
+- dotenv
+- CORS
 - Git
 - GitHub
+- Postman
+- Supertest
+- Node test runner
+- GitHub Actions
+- Render
+- Vercel
+
+I also documented additional course concepts I learned, including TypeScript, the DOM, GraphQL, OAuth 2.0, Java/Spring Boot concepts, SQL, NoSQL, Agile workflow, and AI for Software Engineering. I did not add unnecessary runtime dependencies just to make the list longer.
+
+See `docs/COURSE_TOOLS.md` for the full breakdown of what I used directly and what I learned as a course concept.
 
 ## How to Run the Frontend
 
@@ -168,6 +191,7 @@ I included presentation support files with the frontend repository so I can use 
 - `docs/DEMO_SCRIPT.md` - live demo order and backup plan
 - `docs/PROJECT_SUMMARY.md` - short full-stack project overview
 - `docs/FINAL_CHECKLIST.md` - final code, testing, documentation, and deployment checklist
+- `docs/COURSE_TOOLS.md` - course tools and concepts explained in beginner-friendly language
 
 The `Capstone Presentation` GitHub Actions workflow can build the PowerPoint and save it as a downloadable workflow artifact.
 
