@@ -1,7 +1,27 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { equipment } from "../data/equipment";
+import { equipment as demoEquipment } from "../data/equipment";
+import { apiRequest } from "../services/api";
+import { getEquipmentIcon } from "../utils/equipmentDisplay";
 
 function Home() {
+  const [featured, setFeatured] = useState(
+    demoEquipment.slice(0, 3).map((item) => ({ ...item, _id: item.id }))
+  );
+
+  useEffect(() => {
+    async function loadFeatured() {
+      try {
+        const data = await apiRequest("/equipment");
+        setFeatured(data.equipment.slice(0, 3));
+      } catch {
+        // The built-in examples keep the landing page useful before local setup.
+      }
+    }
+
+    loadFeatured();
+  }, []);
+
   return (
     <>
       <section className="hero">
@@ -39,13 +59,15 @@ function Home() {
         </div>
 
         <div className="card-grid">
-          {equipment.slice(0, 3).map((item) => (
-            <article className="equipment-card" key={item.id}>
-              <div className="equipment-icon" aria-hidden="true">{item.emoji}</div>
+          {featured.map((item) => (
+            <article className="equipment-card" key={item._id}>
+              <div className="equipment-icon" aria-hidden="true">
+                {item.emoji || getEquipmentIcon(item.category)}
+              </div>
               <span className="tag">{item.category}</span>
               <h3>{item.name}</h3>
               <p>{item.description}</p>
-              <Link to={`/equipment/${item.id}`}>View details →</Link>
+              <Link to={`/equipment/${item._id}`}>View details →</Link>
             </article>
           ))}
         </div>
@@ -62,7 +84,7 @@ function Home() {
         </div>
         <div>
           <strong>Request</strong>
-          <span>Submit a borrowing request.</span>
+          <span>Submit and manage borrowing requests.</span>
         </div>
       </section>
     </>
