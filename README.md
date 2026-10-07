@@ -158,6 +158,19 @@ Deployment instructions are in:
 
 `DEPLOYMENT.md`
 
+## Capstone Presentation Materials
+
+I included presentation support files with the frontend repository so I can use the same project story for my class presentation and portfolio.
+
+- `presentation/generate-presentation.js` - source used to build the PowerPoint presentation
+- `presentation/README.md` - presentation folder guide
+- `docs/PRESENTATION_NOTES.md` - slide-by-slide speaking notes
+- `docs/DEMO_SCRIPT.md` - live demo order and backup plan
+- `docs/PROJECT_SUMMARY.md` - short full-stack project overview
+- `docs/FINAL_CHECKLIST.md` - final code, testing, documentation, and deployment checklist
+
+The `Capstone Presentation` GitHub Actions workflow can build the PowerPoint and save it as a downloadable workflow artifact.
+
 ## Challenges I Faced
 
 One of my biggest challenges was connecting the frontend to the backend and understanding how the data moves through the full application. At first, it was easier for me to think about the React pages by themselves, but this project helped me understand that the frontend has to send requests to the API and wait for the backend and MongoDB to respond.
