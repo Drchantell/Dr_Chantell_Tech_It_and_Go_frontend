@@ -1,142 +1,113 @@
 # Tech It & Go! Frontend Deployment Guide
 
-This guide deploys the React/Vite frontend to Vercel and connects it to the Render API.
+This guide deploys the React/Vite frontend to Render and connects it to the Render backend API.
 
 ## Before You Deploy
 
-Make sure the frontend repository is on GitHub:
+Frontend repository:
 
-Drchantell/Dr_Chantell_Tech_It_and_Go_frontend
+`Drchantell/Dr_Chantell_Tech_It_and_Go_frontend`
 
-The repository already includes:
+The repository includes:
 
 - React and Vite
-- `vercel.json` for React Router page refreshes
+- `render.yaml`
+- React Router rewrite support
 - `.env.example`
-- production build checks in GitHub Actions
+- GitHub Actions production build checks
 - API URL support through `VITE_API_URL`
 
-Deploy the backend first so you have the Render API URL.
+Deploy the backend first so you have its public Render URL.
 
-## Step 1: Import the GitHub Repository
+## Step 1: Create the Render Static Site
 
-1. Sign in to Vercel.
-2. Choose Add New > Project.
+1. Sign in to Render.
+2. Choose **New > Blueprint**.
 3. Connect GitHub if needed.
-4. Import `Drchantell/Dr_Chantell_Tech_It_and_Go_frontend`.
+4. Select `Drchantell/Dr_Chantell_Tech_It_and_Go_frontend`.
+5. Use the `main` branch.
+6. Render reads `render.yaml` and creates the static site.
 
-Vercel should recognize the Vite project.
+The site is configured with:
 
-## Step 2: Confirm Build Settings
+- Build command: `npm install && npm run build`
+- Publish directory: `dist`
+- React Router rewrite: `/* -> /index.html`
 
-Use:
+## Step 2: Add the Frontend Environment Variable
 
-- Framework Preset: Vite
-- Root Directory: `./`
-- Build Command: `npm run build`
-- Output Directory: `dist`
-- Install Command: `npm install`
+Set:
 
-The project already passes `npm run build` in GitHub Actions.
+```env
+VITE_API_URL=https://YOUR-BACKEND.onrender.com/api
+```
 
-## Step 3: Add the Frontend Environment Variable
+This is the public URL for the Express API.
 
-Before deploying, add:
+## Step 3: Deploy
 
-### VITE_API_URL
+After the deploy finishes, Render gives the frontend a public URL similar to:
 
-Value:
+```text
+https://tech-it-and-go.onrender.com
+```
 
-`https://YOUR-RENDER-API.onrender.com/api`
+Open the site and confirm the home page loads.
 
-Example:
+## Step 4: Update Backend CORS
 
-`https://tech-it-and-go-api.onrender.com/api`
+Copy the final frontend URL.
 
-This is a public API base URL, not a password.
+In the backend Render service, set:
 
-Apply it to Production. You may also apply it to Preview if you want preview deployments to use the same API.
+```env
+CLIENT_URL=http://localhost:5173,https://YOUR-FRONTEND.onrender.com
+```
 
-## Step 4: Deploy
+Save the change and redeploy the backend.
 
-Choose Deploy.
+## Step 5: Test the Main Routes
 
-Vercel gives you a URL similar to:
+Test:
 
-`https://tech-it-and-go.vercel.app`
+- `/`
+- `/equipment`
+- `/equipment/:id`
+- `/lessons/:id`
+- `/register`
+- `/login`
+- `/dashboard`
+- `/equipment/:id/request`
+- `/manage/equipment`
 
-Open the site and make sure the home page loads.
+Refresh the browser while on a React route such as `/equipment` or `/dashboard`. The rewrite in `render.yaml` should serve `index.html` instead of returning a 404.
 
-## Step 5: Update Render CORS
+## Step 6: Test Full CRUD
 
-Copy the final Vercel URL.
+### Borrower lending requests
 
-In Render, change `CLIENT_URL` to:
+- Create a request
+- Read it in the dashboard
+- Update it while pending
+- Delete it while pending
 
-`http://localhost:5173,https://YOUR-FRONTEND.vercel.app`
+### Staff equipment
 
-Save the environment change and redeploy the API.
+- Create equipment
+- Read it in the catalog
+- Update it
+- Delete or archive it
 
-This step allows the deployed React app to call the deployed Express API.
+## Final Public Deployment Check
 
-## Step 6: Test Every Main Route
+The class-ready public app should have:
 
-Open the deployed site and test:
-
-- Home
-- Catalog
-- Equipment Details
-- Lesson Plan
-- Register
-- Login
-- Dashboard
-- Lending Request
-- Staff Manage Equipment
-
-Refresh the browser while on a route such as `/equipment` or `/dashboard`.
-
-The page should still load instead of showing a 404. The included `vercel.json` handles the React Router rewrite.
-
-## Step 7: Test Full CRUD
-
-### Equipment - Staff
-
-Create:
-Add a new equipment item.
-
-Read:
-Confirm it appears in the catalog and detail page.
-
-Update:
-Edit its quantity or description.
-
-Delete:
-Remove it. If it already has lending history, the backend safely archives it instead.
-
-### Lending Requests - Borrower
-
-Create:
-Submit a borrowing request.
-
-Read:
-Confirm it appears in the dashboard.
-
-Update:
-Edit dates or purpose while it is pending.
-
-Delete:
-Delete the pending request.
-
-## Final Deployment Check
-
-The project is ready for a class demonstration when:
-
-- frontend loads from Vercel
-- backend health endpoint reports connected
-- MongoDB data persists after refresh
-- registration and login work
-- full equipment CRUD works
-- full lending-request CRUD works
-- protected pages require login
-- borrower cannot use staff equipment routes
-- borrower cannot access another borrower's requests
+- Render frontend URL loading successfully
+- Render backend `/api/health` reporting `database: connected`
+- MongoDB data persisting after refresh
+- Registration and login working
+- Borrower request CRUD working
+- Staff equipment CRUD working
+- Protected pages requiring login
+- Borrowers blocked from staff routes
+- Borrowers blocked from another user's requests
