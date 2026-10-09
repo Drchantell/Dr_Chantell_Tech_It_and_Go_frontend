@@ -7,6 +7,8 @@ Both presentation versions are available here:
 
 Both decks use the transparent neon Tech It & Go! emblem from `public/tech-it-go-logo.png`, which also appears throughout the app. The square logo keeps its original proportions.
 
+Body text is aligned to the top left of its box, and slide headings leave space for the corner logo. Text boxes can shrink to fit their frames when opened in a presentation viewer.
+
 This folder also contains `generate-presentation.js`, a source file that rebuilds the longer capstone deck from GitHub using the same neon logo.
 
 The presentation covers:
