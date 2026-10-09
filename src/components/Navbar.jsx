@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <header className="site-header">
       <NavLink className="brand" to="/" aria-label="Tech It and Go home">
-        <img src="/Tech%26Gologo.svg" alt="Tech It & Go!" />
+        <img src="/tech-it-go-logo.png" alt="Tech It & Go!" />
       </NavLink>
 
       <nav className="main-nav" aria-label="Main navigation">

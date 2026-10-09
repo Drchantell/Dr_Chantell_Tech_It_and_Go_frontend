@@ -7,7 +7,7 @@ on:
     paths:
       - "presentation/**"
       - "docs/**"
-      - "public/Tech&Gologo.svg"
+      - "public/tech-it-go-logo.png"
       - ".github/workflows/presentation.yml"
 
 jobs:

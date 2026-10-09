@@ -122,7 +122,7 @@ function Dashboard() {
         <div>
           <img
             className="branding-logo dashboard-brand"
-            src="/Tech%26Gologo.svg"
+            src="/tech-it-go-logo.png"
             alt="Tech It & Go!"
           />
           <p className="eyebrow">My Dashboard</p>

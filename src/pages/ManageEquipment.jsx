@@ -130,7 +130,7 @@ function ManageEquipment() {
       <div className="section-heading">
         <img
           className="branding-logo dashboard-brand"
-          src="/Tech%26Gologo.svg"
+          src="/tech-it-go-logo.png"
           alt="Tech It & Go!"
         />
         <p className="eyebrow">Staff Area</p>

@@ -44,7 +44,7 @@ function Home() {
         </div>
 
         <div className="hero-logo-card">
-          <img src="/Tech%26Gologo.svg" alt="Tech It & Go! logo" />
+          <img src="/tech-it-go-logo.png" alt="Tech It & Go! logo" />
         </div>
       </section>
 
