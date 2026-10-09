@@ -88,7 +88,7 @@ function RequestForm() {
         <div className="success-card">
           <img
             className="branding-logo auth-logo"
-            src="/Tech%26Gologo.svg"
+            src="/tech-it-go-logo.png"
             alt="Tech It & Go!"
           />
           <div className="success-icon">✓</div>

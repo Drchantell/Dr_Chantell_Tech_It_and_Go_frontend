@@ -40,7 +40,7 @@ function Register() {
       <div className="form-card">
         <img
           className="branding-logo auth-logo"
-          src="/Tech%26Gologo.svg"
+          src="/tech-it-go-logo.png"
           alt="Tech It & Go!"
         />
         <p className="eyebrow">Join Tech It & Go!</p>

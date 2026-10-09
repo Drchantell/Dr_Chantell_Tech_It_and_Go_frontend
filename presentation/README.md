@@ -1,8 +1,13 @@
 # Tech It & Go! Capstone Presentation
 
-The complete PowerPoint is included in the final submission ZIP.
+Both presentation versions are available here:
 
-This folder also contains `generate-presentation.js`, a source file that rebuilds the capstone deck from GitHub using the existing Tech It & Go! logo.
+- [Seven-minute presentation with the catalog link](Tech_It_and_Go_7_Minute_Presentation_With_Catalog_Link.pptx)
+- [Longer capstone presentation](Tech_It_and_Go_Capstone_Presentation.pptx)
+
+Both decks use the transparent neon Tech It & Go! emblem from `public/tech-it-go-logo.png`, which also appears throughout the app. The square logo keeps its original proportions.
+
+This folder also contains `generate-presentation.js`, a source file that rebuilds the longer capstone deck from GitHub using the same neon logo.
 
 The presentation covers:
 

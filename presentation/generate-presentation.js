@@ -21,12 +21,12 @@ pptx.defineSlideMaster({
 });
 
 const C = { pink:'FF1493', teal:'26D9CF', purple:'9D6CFF', mint:'C8F7DF', black:'111015', white:'FFFFFF', gray:'595465', pale:'F2ECFF', yellow:'FFE66D' };
-const logo = path.join(__dirname, '..', 'public', 'Tech&Gologo.svg');
+const logo = path.join(__dirname, '..', 'public', 'tech-it-go-logo.png');
 const smallLogo = logo;
 const out = path.join(__dirname, 'Tech_It_and_Go_Capstone_Presentation.pptx');
 
 function title(slide, text, sub='') {
-  slide.addImage({path:smallLogo,x:10.95,y:0.28,w:1.65,h:0.58});
+  slide.addImage({path:smallLogo,x:11.65,y:0.18,w:1.0,h:1.0});
   slide.addText(text, { x:0.65, y:0.48, w:12.0, h:0.55, fontFace:'Arial', fontSize:30, bold:true, color:C.black, margin:0 });
   if (sub) slide.addText(sub, { x:0.67, y:1.08, w:11.9, h:0.35, fontFace:'Arial', fontSize:15, color:C.gray, margin:0 });
 }
@@ -47,7 +47,7 @@ function footerPill(slide, text, color=C.black) {
 
 {
   const s=pptx.addSlide(); s.background={color:C.black};
-  s.addImage({path:logo,x:1.2,y:0.55,w:10.9,h:3.2});
+  s.addImage({path:logo,x:4.87,y:0.1,w:3.6,h:3.6});
   s.addText('FULL-STACK CAPSTONE', {x:4.5,y:4.05,w:4.3,h:0.35,fontSize:16,bold:true,color:C.teal,align:'center',charSpacing:2,margin:0});
   s.addText('Technology lending made simple.', {x:1.5,y:4.72,w:10.3,h:0.65,fontSize:30,bold:true,color:C.white,align:'center',margin:0});
   s.addText('Dr. Chantell McDowell', {x:3.3,y:5.65,w:6.7,h:0.36,fontSize:18,bold:true,color:C.pink,align:'center',margin:0});
@@ -144,7 +144,7 @@ function footerPill(slide, text, color=C.black) {
 }
 {
   const s=pptx.addSlide(); s.background={color:C.black};
-  s.addImage({path:logo,x:2.0,y:0.75,w:9.3,h:2.75});
+  s.addImage({path:logo,x:4.97,y:0.35,w:3.4,h:3.4});
   s.addText('Thank You!',{x:3.6,y:4.1,w:6.1,h:0.7,fontSize:38,bold:true,color:C.white,align:'center',margin:0});
   s.addText('Questions?',{x:4.4,y:5.0,w:4.5,h:0.5,fontSize:26,bold:true,color:C.teal,align:'center',margin:0});
   s.addText('Dr. Chantell McDowell  •  Tech It & Go!',{x:2.9,y:6.0,w:7.6,h:0.35,fontSize:16,color:C.pink,align:'center',margin:0});

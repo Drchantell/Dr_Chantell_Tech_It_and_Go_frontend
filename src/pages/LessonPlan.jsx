@@ -59,7 +59,7 @@ function LessonPlan() {
       <article className="lesson-card">
         <img
           className="branding-logo lesson-logo"
-          src="/Tech%26Gologo.svg"
+          src="/tech-it-go-logo.png"
           alt="Tech It & Go!"
         />
         <p className="eyebrow">Lesson Plan</p>
