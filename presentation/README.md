@@ -21,4 +21,4 @@ The recording mentions the original Vercel frontend plan. The current repository
 
 ## Earlier presentation sources
 
-`generate-presentation.js` and the existing GitHub Actions presentation workflow retain the earlier deck generation path. `7-minute-read-along-script.md` is the earlier rehearsal script. The downloaded narrated PowerPoint uses the updated timing and embedded recording.
+`generate-presentation.js` and the existing GitHub Actions presentation workflow retain the earlier deck generation path. The downloaded narrated PowerPoint uses the updated timing and embedded recording.
