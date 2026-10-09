@@ -1,4 +1,17 @@
-# Tech It & Go! Frontend
+# Tech It & Go! + Creative World
+
+One public repository for my complete MERN application, interactive Creative World portfolio and narrated capstone presentation.
+
+**[Play the seven-minute voice presentation and explore Creative World](https://dr-chantell-tech-it-go-presentation.onrender.com/)**
+
+| Project | Location |
+| --- | --- |
+| Tech It & Go! React frontend | [`src/`](src/) and the root `package.json` |
+| Tech It & Go! Express / MongoDB backend | [`backend/`](backend/) |
+| Creative World interactive portfolio city | [`creative-world/`](creative-world/) |
+| Recorded presentation, original PowerPoints and public-player builder | [`presentation/`](presentation/) |
+
+Run the frontend from the repository root. Run backend commands from `backend/`; copy `backend/.env.example` to `backend/.env` and set your database and JWT configuration. Each project keeps its existing run instructions. The public presentation and city use local demo data and need no sign-in.
 
 ## About My Project
 
@@ -6,7 +19,7 @@ Tech It & Go! is my Per Scholas capstone project. I created it as a technology l
 
 I chose this project because it connects my background in libraries and makerspaces with what I am learning in full-stack software development.
 
-This repository contains the frontend of my application. I built it with React and Vite.
+The React frontend stays at the repository root and uses React and Vite. The `backend/` folder contains the Node.js, Express, MongoDB and Mongoose API. Together they form the complete MERN application.
 
 ## What the Frontend Does
 

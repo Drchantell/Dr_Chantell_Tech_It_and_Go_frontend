@@ -1,0 +1,258 @@
+Tech It & Go! - Project Plan
+
+Borrow the tech. Build your next big idea.
+
+1. Project Overview
+Tech It & Go! is a full-stack technology lending library. It helps makerspaces, nonprofits, educators, and learners browse technology equipment, view related lesson ideas, and submit borrowing requests.
+
+I chose this project because it connects my background in libraries and makerspaces with what I am learning in software engineering.
+
+The collection can include 3D printing kits, robotics equipment, computers, coding tools, emerging technology, and entrepreneurship resources. Large equipment can be marked for on-site use only. Software listings can explain license information, but the app will not share or redistribute software licenses.
+
+2. Main Goal
+My goal is to build a working MERN application where users can:
+
+- Create an account
+- Log in securely
+- Browse technology equipment
+- Search and filter items
+- View equipment details
+- View lesson plans connected to equipment
+- Submit a lending request
+- View, edit, and delete their own pending requests
+- Use the app on desktop and mobile devices
+
+Staff users can also manage equipment records.
+
+3. Technology Used
+
+Frontend:
+React
+Vite
+JavaScript
+HTML
+CSS
+React Router
+
+Backend:
+Node.js
+Express
+MongoDB Atlas
+Mongoose
+
+Authentication:
+bcrypt
+JSON Web Tokens
+
+Other Tools:
+Git
+GitHub
+VS Code
+Postman
+dotenv
+fetch
+
+The design will use hot pink, teal, soft purple, mint, black, and white.
+
+4. Main Pages
+
+The application will include:
+
+Home page
+Register page
+Login page
+User dashboard
+Equipment catalog
+Equipment details page
+Lending request form
+Lesson plan page
+Equipment management pages for staff
+
+5. Database Models
+
+User
+
+Stores:
+name
+email
+password hash
+role
+
+Equipment
+
+Stores:
+name
+category
+description
+image
+quantity available
+skill level
+safety notes
+on-site-only status
+archived status
+
+Lesson Plan
+
+Stores:
+equipment reference
+title
+objectives
+materials
+steps
+skill level
+
+Lending Request
+
+Stores:
+user reference
+equipment reference
+borrower information
+checkout date
+return date
+purpose
+status
+created date
+
+6. How the App Works
+
+React sends requests to the Express backend.
+
+Express checks the information, uses Mongoose to read or save data in MongoDB, and sends a response back to React.
+
+Users must be logged in to manage their lending requests. A user can only view, edit, or delete their own requests.
+
+A lending request starts as pending. It does not automatically mean the equipment is approved or reserved.
+
+7. Main API Routes
+
+Authentication
+
+POST /api/auth/register
+Creates a new user account.
+
+POST /api/auth/login
+Logs in a user and returns a token.
+
+GET /api/auth/me
+Returns the logged-in user's information.
+
+Equipment
+
+GET /api/equipment
+Shows available equipment.
+
+GET /api/equipment/:id
+Shows one equipment item.
+
+POST /api/equipment
+Creates equipment for staff users.
+
+PATCH /api/equipment/:id
+Updates equipment for staff users.
+
+DELETE /api/equipment/:id
+Deletes or archives equipment for staff users.
+
+Lessons
+
+GET /api/lessons
+Shows lesson plans.
+
+GET /api/lessons/:id
+Shows one lesson plan.
+
+Lending Requests
+
+GET /api/requests
+Shows the logged-in user's requests.
+
+POST /api/requests
+Creates a new lending request.
+
+PATCH /api/requests/:id
+Updates the user's own pending request.
+
+DELETE /api/requests/:id
+Deletes the user's own pending request.
+
+8. Validation and Security
+
+The app will:
+
+Require important form fields
+Check email format
+Make sure return dates are after checkout dates
+Prevent negative equipment quantities
+Hash passwords before saving them
+Protect private routes with JWT authentication
+Keep database passwords and secrets in environment variables
+Prevent users from changing another person's requests
+Prevent regular users from using staff equipment routes
+
+9. User Stories
+
+As a visitor, I want to browse equipment so I can see what technology is available.
+
+As a user, I want to search and filter equipment so I can find what I need faster.
+
+As an educator, I want to see lesson plans so I can use the equipment for learning activities.
+
+As a borrower, I want to submit a lending request so staff can review it.
+
+As a logged-in user, I want to view, edit, and delete my own pending requests.
+
+As a staff member, I want to add and update equipment so the catalog stays current.
+
+10. Minimum Working Version
+
+The first working version should include:
+
+Registration and login
+JWT authentication
+Equipment catalog
+Search and filters
+Equipment details
+Lesson plan details
+Lending request form
+Personal request dashboard
+Create, edit, and delete request features
+Staff equipment CRUD
+MongoDB database storage
+Responsive design
+Error and success messages
+Deployment
+
+11. Future Ideas
+
+Features I may add later include:
+
+Checkout and return tracking
+Overdue reminders
+Email notifications
+QR codes
+Favorites
+Reservation calendars
+Equipment analytics
+Image uploads
+
+12. Final Demo
+
+For my final demonstration, I plan to:
+
+Register a user
+Log in
+Browse the equipment catalog
+Search for an item
+Open equipment details
+View a related lesson
+Submit a lending request
+Show the saved request in the dashboard
+Edit the request
+Delete the request
+Log out
+Show staff equipment management
+
+This project gives me a chance to practice frontend development, backend development, databases, authentication, CRUD operations, API routes, and full-stack application design in one project.
+
+Author: Dr. Chantell McDowell
+        PerScholas Student
