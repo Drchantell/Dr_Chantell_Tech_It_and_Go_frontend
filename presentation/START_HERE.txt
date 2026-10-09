@@ -1,0 +1,35 @@
+Dr. Chantell’s Tech It & Go capstone project
+
+SEVEN-MINUTE POWERPOINT
+Open Dr_Chantells_Tech_It_and_Go_capstone_project.pptx in desktop PowerPoint.
+Choose Slide Show > From Beginning. Enable Play Narrations and Use Timings.
+Your edited voice recording and the app walkthrough are embedded. The nine
+slide timings add up to exactly 7:00. PowerPoint previews may not play media.
+
+INTERACTIVE PRESENTATION
+Open Dr_Chantells_Tech_It_and_Go_capstone_project_Interactive.html in Chrome,
+Edge or another modern browser. Select Start 7-minute presentation. Use Topics
+to zoom out and select a section. Try the app pauses the narration and opens
+the working sample walkthrough. Return to presentation resumes playback if
+it was playing. Space plays/pauses; arrow keys move between topics.
+The HTML file works offline and is a Prezi-style zooming presentation.
+It is not a native Prezi project.
+
+APP WALKTHROUGH
+Browse equipment, search for a kit, view its lesson plan, then use Demo login.
+Borrower: borrower@example.org, any password.
+Staff: staff@example.org, any password.
+Borrowers can create, edit and delete sample requests. Staff can manage sample
+equipment. This demo uses the project's React app with a local sample API.
+No live accounts or reservations are created. Data resets when reopened.
+The 30-second PowerPoint walkthrough shows actual screens from this sample.
+
+OTHER FILES
+The Extended PowerPoint preserves the original 20-slide presentation.
+The narration M4A is a standalone seven-minute recording in your voice.
+Both presentations are also kept in the GitHub presentation folder:
+https://github.com/Drchantell/Dr_Chantell_Tech_It_and_Go_frontend/tree/main/presentation
+
+Audio edit: trimmed long pauses, the incorrect introductory layer count,
+a stumbled course-tools line, a repeated closing slogan and the extended
+unscripted outro. Playback is about 2.2% faster with original pitch retained.
