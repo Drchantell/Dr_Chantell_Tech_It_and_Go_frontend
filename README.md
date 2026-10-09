@@ -128,7 +128,6 @@ This capstone connects the main tools I used across the course:
 - Node test runner
 - GitHub Actions
 - Render
-- Vercel
 
 I also documented additional course concepts I learned, including TypeScript, the DOM, GraphQL, OAuth 2.0, Java/Spring Boot concepts, SQL, NoSQL, Agile workflow, and AI for Software Engineering. I did not add unnecessary runtime dependencies just to make the list longer.
 
@@ -173,13 +172,17 @@ The project also includes a GitHub Actions build check.
 
 ## Deployment
 
-The frontend is prepared for Vercel deployment.
+The live project uses Render for the React frontend and Node/Express backend. MongoDB Atlas stores the database.
 
-I included a `vercel.json` file so React Router pages can still load when a user refreshes the browser.
+- Frontend: https://tech-it-and-go.onrender.com/
+- Backend API: https://tech-it-and-go-api.onrender.com/api
+- Deployment instructions: `DEPLOYMENT.md`
 
-Deployment instructions are in:
+### Why I did not use Vercel
 
-`DEPLOYMENT.md`
+Vercel was part of my original frontend deployment plan. I chose Render for the final deployment so I could manage both the frontend and backend on the same hosting platform. This keeps the hosting setup easier to follow and reduces the number of deployment dashboards I need to manage. MongoDB Atlas remains the database service.
+
+This was a hosting choice, not a limitation or failure of Vercel. The `vercel.json` file reflects the earlier plan and is not used by the current Render deployment.
 
 ## Capstone Presentation Materials
 
